@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Alata&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+@font-face {
+    font-family: 'Alata';
+    src: url(https://fonts.gstatic.com/s/alata/v10/PbytFmztEwbIoce9zqY.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'Work Sans';
+    src: url(https://fonts.gstatic.com/s/worksans/v19/QGYsz_wNahGAdqQ43Rh_fKDp.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'Abel';
+    src: url(https://fonts.gstatic.com/s/abel/v18/MwQ5bhbm2POE2V9BPQ.woff2) format('woff2');
+}
+  
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffff;
+}
+
+.homeScreenMainContainer {
+    height: 70vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.skillsMainContainer {
+    height: 30vh; 
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFE4E4;
+}
+
+.profileContainer {
+    height: 80%; 
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+}
+
+.profileDetailsContainer {
+    height: 100%; 
+    width: 60%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profilePictureContainer {
+    height: 100%; 
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.myPictureContainer {
+    height: 85%;
+    width: 65%;
+    border-radius: 50%;
+}
+
+.helloContainer {
+    width: 100%; 
+    height: 10%; 
+    display: flex;
+    align-items: center;
+}
+
+.helloText {
+    font-family: 'Work Sans';
+    font-size: 40px; 
+    font-weight: 500; 
+}
+
+.waveIcon {
+    margin-left: 2%;
+    color: #DCB991;
+}
+
+.introductionContainer {
+    height: 40%; 
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.introductionText {
+    font-family: 'Work Sans';
+    font-size: 18px; 
+    color: #0e0e0e;
+    opacity: 0.66; 
+    text-align: justify;
+}
+
+.cvContainer {
+    height: 12%;
+    width: 100%; 
+    margin-top: 1%;
+}
+
+.cvButton {
+    height: 100%; 
+    width: 25%;
+    background-color: #FFFFFF;
+    border: 2px solid #935A5A;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.cvButton:hover {
+    background-color: #935A5A; 
+    opacity: 0.66;
+    border-color: #FFFFFF;
+}
+
+.cvButtonText {
+    font-family: 'Work Sans';
+    font-size: 18px; 
+    font-weight: 500;
+    color: #935A5A;
+    opacity: 0.66;
+}
+
+.cvButton:hover .cvButtonText {
+    color: #ffff;
+}
+
+.skillsTitleContainer {
+    margin-top: 1%;
+    height: 15%;
+    width: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skillsTitle {
+    font-family: 'Work Sans';
+    font-size: 30px; 
+    font-weight: 500; 
+    color: #0e0e0e;
+}
+
+.skillsFilterMainContainer {
+    width: 85%; 
+    height: 85%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skillsFilterContainer {
+    width: 100%; 
+    height: 25%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.skillsFilter { 
+    height: 70%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #935A5A;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-right: 2%; 
+    padding: 3px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.filterText {
+    font-family: 'Work Sans';
+    font-weight: 500;
+    font-size: 12px;
+    color: #0e0e0e; 
+    opacity: 0.66;
+}
+
+.skillsFilter:hover {
+    background-color: #935A5A;
+}
+
+.skillsFilter:hover .filterText {
+    color: #ffffff;
+}
+
+.filterDetailsContainer {
+    background-color: violet;
+    height: 70%; 
+    width: 100%;
+}

@@ -22,20 +22,20 @@
     width: 100%;
     height: 8%;
     z-index: 1000;
-    /* background-color: wheat; */
     display: flex; 
+    justify-content: center;
+}
+
+.webHeaderContainer {
+    height: 100%; 
+    width: 85%; 
+    display: flex;
     flex-direction: row;
 }
 
-.webPageHomeContainer {
-    height: 100%; 
-    width: 30%; 
-}
-
 .homeMyNameContainer {
-    margin-left: 40%; 
     height: 100%;
-    width: 70%; 
+    width: 30%; 
     display: flex;
     align-items: flex-end;
 }
@@ -48,6 +48,7 @@
 
 .homeNameJane {
     color: #0e0e0e; 
+    opacity: 0.66;
 }
 
 .homeNameBlanca {
@@ -57,19 +58,152 @@
 }
 
 .webNavigationContainer {
-    background-color: yellow;
     width: 70%; 
     height: 100%; 
     display: flex;
     justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: row;
 }
 
-.webNavigation {
-    height: 100%; 
-    width: 70%; 
-    margin-right: 20%; 
+.contactNavContainer,
+.homeNavContainer,
+.experienceNavContainer,
+.portfolioNavContainer {
     display: flex;
-    flex-direction: row;
-    background-color: yellowgreen;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100%; 
+    width: 18%;
+    color: #965d5d;
+    opacity: 0.66;
+    position: relative; 
 }
-  
+
+.navigationText {
+    font-family: 'Alata';
+    font-size: 18px; 
+    font-weight: 500; 
+    color: #0e0e0e; 
+    margin-left: 2%;
+    cursor: pointer; 
+}
+
+
+.navigationIcons {
+    color: #0e0e0e;
+    cursor: pointer;
+}
+
+.homeNavContainer:hover .navigationText,
+.homeNavContainer:hover .navigationIcons,
+.portfolioNavContainer:hover .navigationText,
+.portfolioNavContainer:hover .navigationIcons,
+.experienceNavContainer:hover .navigationText,
+.experienceNavContainer:hover .navigationIcons,
+.contactNavContainer:hover .navigationText,
+.contactNavContainer:hover .navigationIcons {
+    color: #965d5d;
+    opacity: 0.80;
+}
+
+.menuContainer {
+    display: none;
+}
+
+@media (max-width: 880px) {
+    .homeNavContainer,
+    .portfolioNavContainer,
+    .contactNavContainer,
+    .experienceNavContainer {
+        display: none;
+    }
+
+    .menuContainer {
+        height: 100%; 
+        width: 10%; 
+        display: flex; 
+        align-items: flex-end;
+        justify-content: center;
+    }
+
+    .menuIcon {
+        cursor: pointer;
+        margin-bottom: 10%;
+    }
+
+    .navigationIcons:hover {
+        color: #965d5d;
+        opacity: 0.80;
+    }
+
+    .sideNavigationContainer {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 40%;
+        background-color: rgba(255, 182, 193, 0.3);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease;
+        z-index: 1001;
+    }
+    
+    .sideNavigationContainer.open {
+        right: 0;
+    }
+    
+    .sideNavItemContainer {
+        display: flex;
+        flex-direction: column;
+        margin-top: 15%;
+        height: 25%;
+    }
+    
+    .sideNavItem {
+        height: 30%;
+        width: 100%;
+        cursor: pointer;
+    }
+
+    .sideNavTextContainer {
+        margin-left: 10%;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .sideNavText {
+        font-family: 'Alata';
+        font-size: 18px;
+        font-weight: 200;
+        margin-left: 2%;
+    }
+
+    .sideNavItem:hover {
+        width: 100%;
+        height: 30%;
+        background-color: #ffff;
+        transition: right 0.3s ease;
+    }
+
+    .sideNavItem:hover .sideNavText,
+    .sideNavItem:hover .navigationIcons {
+        color: #965d5d;
+        opacity: 0.80;
+    }
+}
+
+@media (min-width: 881px) {
+    .menuContainer {
+        display: none; 
+    }
+
+    .sideNavigationContainer {
+        display: none;
+    }
+}
+
+
