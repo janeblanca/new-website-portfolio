@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Alata&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+@font-face {
+    font-family: 'Alata';
+    src: url(https://fonts.gstatic.com/s/alata/v10/PbytFmztEwbIoce9zqY.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'Work Sans';
+    src: url(https://fonts.gstatic.com/s/worksans/v19/QGYsz_wNahGAdqQ43Rh_fKDp.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'Abel';
+    src: url(https://fonts.gstatic.com/s/abel/v18/MwQ5bhbm2POE2V9BPQ.woff2) format('woff2');
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 8%;
+    z-index: 1000;
+    /* background-color: wheat; */
+    display: flex; 
+    flex-direction: row;
+}
+
+.webPageHomeContainer {
+    height: 100%; 
+    width: 30%; 
+}
+
+.homeMyNameContainer {
+    margin-left: 40%; 
+    height: 100%;
+    width: 70%; 
+    display: flex;
+    align-items: flex-end;
+}
+
+.homeNameJane, .homeNameBlanca {
+    font-family: 'Work Sans';
+    font-size: 30px; 
+    font-weight: 600;
+}
+
+.homeNameJane {
+    color: #0e0e0e; 
+}
+
+.homeNameBlanca {
+    color: #935A5A;
+    opacity: 0.66;
+    margin-left: 2.5%;
+}
+
+.webNavigationContainer {
+    background-color: yellow;
+    width: 70%; 
+    height: 100%; 
+    display: flex;
+    justify-content: flex-end;
+}
+
+.webNavigation {
+    height: 100%; 
+    width: 70%; 
+    margin-right: 20%; 
+    display: flex;
+    flex-direction: row;
+    background-color: yellowgreen;
+}
+  
