@@ -10,11 +10,6 @@
     font-family: 'Work Sans';
     src: url(https://fonts.gstatic.com/s/worksans/v19/QGYsz_wNahGAdqQ43Rh_fKDp.woff2) format('woff2');
 }
-
-@font-face {
-    font-family: 'Abel';
-    src: url(https://fonts.gstatic.com/s/abel/v18/MwQ5bhbm2POE2V9BPQ.woff2) format('woff2');
-}
   
 
 html, body {
@@ -73,8 +68,8 @@ body {
 }
 
 .myPictureContainer {
-    height: 85%;
-    width: 65%;
+    height: 75%;
+    width: 60%;
     border-radius: 50%;
 }
 
@@ -106,9 +101,9 @@ body {
 
 .introductionText {
     font-family: 'Work Sans';
-    font-size: 18px; 
+    font-size: 15px; 
     color: #0e0e0e;
-    opacity: 0.66; 
+    opacity: 0.80; 
     text-align: justify;
 }
 
@@ -142,7 +137,7 @@ body {
     font-size: 18px; 
     font-weight: 500;
     color: #935A5A;
-    opacity: 0.66;
+    /* opacity: 0.66; */
 }
 
 .cvButton:hover .cvButtonText {
@@ -188,7 +183,8 @@ body {
     align-items: center;
     justify-content: center;
     border: 2px solid #935A5A;
-    border-radius: 20px;
+    background-color: #FFE4E4;
+    border-radius: 50px;
     cursor: pointer;
     margin-right: 2%; 
     padding: 3px;
@@ -200,7 +196,6 @@ body {
     font-weight: 500;
     font-size: 12px;
     color: #0e0e0e; 
-    opacity: 0.66;
 }
 
 .skillsFilter:hover {
@@ -211,8 +206,180 @@ body {
     color: #ffffff;
 }
 
+.activeSkills { 
+    background-color: #9E5A5A;
+    font-family: 'Work Sans';
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.activeSkills .filterText {
+    color: #ffffff;
+}
+
 .filterDetailsContainer {
-    background-color: violet;
     height: 70%; 
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.filterDetails {
+    height: 100%; 
+    width: 70%; 
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.filterMainContainer {
+    height: 40%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filterContainer {
+    background-color: white;
+    height: 80%;
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #935A5A;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.filterContainer:hover {
+    transform: scale(1.1); 
+}
+
+.techStackLogo {
+    height: 50%;
+    width: 20%;
+}
+
+.techStackText {
+    font-family: 'Alata';
+    font-size: 10px; 
+    font-weight: 500;
+    color: #0e0e0e;
+    margin-left: 2%;
+    text-align: center;
+}
+
+@media (max-width: 1180px) {
+    .cvButton {
+        height: 100%; 
+        width: 35%;
+        background-color: #FFFFFF;
+        border: 2px solid #935A5A;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s, border-color 0.3s;
+    }
+}
+
+@media (max-width: 950px) {
+    .profileContainer {
+        margin-top: 10%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .profilePictureContainer {
+        height: 40%;
+        width: 100%;
+    }
+
+    .myPictureContainer {
+        height: 100%;
+        width: 35%;
+        border-radius: 50%;
+    }
+
+    .profileDetailsContainer {
+        height: 60%;
+        width: 100%;
+    }
+
+    .helloContainer {
+        height: 10%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .helloText{
+        font-size: 20px;
+    }
+
+    .introductionContainer {
+        height: 70%;
+    }
+
+    .introductionText {
+        font-size: 13px;
+    }
+
+    .cvContainer {
+        margin: 0;
+        height: 20%; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cvButton {
+        height: 70%;
+        width: 35%;
+        border-radius: 50px;
+    }
+
+    .cvButtonText {
+        font-size: 12px;
+    }
+
+    .skillsTitle {
+        font-size: 15px;
+    }
+    .filterText {
+        font-size: 10px;
+    }
+
+    .filterDetails {
+        width: 100%;
+    }
+
+    .techStackText {
+        font-size: 8px;
+    }
+
+    @media (max-height: 610px) {
+        .profilePictureContainer {
+            height: 50%;
+            width: 50%;
+        }
+    
+    }
+}
+
+@media (max-height: 610px) {
+    .introductionText {
+        font-size: 13px;
+    }
+}
+
+@media (max-height: 610px) {
+    .introductionText {
+        font-size: 13px;
+    }
 }

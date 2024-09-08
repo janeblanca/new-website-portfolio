@@ -8,12 +8,28 @@ import { collection, onSnapshot } from "firebase/firestore";
 import { firestore } from "../../firebase/firebase";
 
 export default function HomeScreen() {
-  const [isFilterClicked, setIsFilterClicked] = useState(false);
   const [isSkillsData, setSkillsData] = useState([]);
+  const [selectedSkill, setSelectedSkill] = useState(null);
+  const [isSkillActive, setSkillActive] = useState(0);
+  const [isDocuData, setDocumentsData] = useState([]);
 
-  const toggleFilter = () => {
-    setIsFilterClicked(!isFilterClicked);
-    console.log("Programming Language");
+  const toggleFilter = (skill, index) => {
+    setSelectedSkill(skill);
+    setSkillActive(index);
+    console.log("Selected Skill: ", skill);
+  };
+
+  const handleCV = () => {
+    const cvDocument = isDocuData.find(
+      (item) => item.docuName === "Curriculum Vitae"
+    );
+
+    if (cvDocument) {
+      console.log("CV URL: ", cvDocument.docuUrl);
+      window.open(cvDocument.docuUrl, "_blank");
+    } else {
+      console.log("Document not found!");
+    }
   };
 
   useEffect(() => {
@@ -25,14 +41,34 @@ export default function HomeScreen() {
           id: doc.id,
         }));
         setSkillsData(skillsData);
+
+        if (skillsData.length > 0) {
+          setSelectedSkill(skillsData[0]);
+        }
+
         console.log("SKILLS DATA: ", skillsData);
       });
       return unsubscribeSkills;
     };
     const subscribeSkills = fetchSkills();
 
+    const fetchDocuments = () => {
+      const documentsRef = collection(firestore, "DOCUMENTS");
+      const unsubscribeDocs = onSnapshot(documentsRef, (snapshot) => {
+        const documentsData = snapshot.docs.map((doc) => ({
+          ...doc.data(),
+          id: doc.id,
+        }));
+        setDocumentsData(documentsData);
+        console.log("Documents Data: ", documentsData);
+      });
+      return unsubscribeDocs;
+    };
+    const subscribeDocs = fetchDocuments();
+
     return () => {
       subscribeSkills();
+      subscribeDocs();
     };
   }, []);
 
@@ -40,6 +76,9 @@ export default function HomeScreen() {
     <>
       <div className="homeScreenMainContainer">
         <div className="profileContainer">
+          <div className="profilePictureContainer">
+            <img src={myImage} alt="myImage" className="myPictureContainer" />
+          </div>
           <div className="profileDetailsContainer">
             <div className="helloContainer">
               <span className="helloText">Hi, I'm Jane Blanca</span>
@@ -59,13 +98,10 @@ export default function HomeScreen() {
               </p>
             </div>
             <div className="cvContainer">
-              <button className="cvButton">
+              <button onClick={handleCV} className="cvButton">
                 <span className="cvButtonText">DOWNLOAD CV</span>
               </button>
             </div>
-          </div>
-          <div className="profilePictureContainer">
-            <img src={myImage} alt="myImage" className="myPictureContainer" />
           </div>
         </div>
       </div>
@@ -78,14 +114,43 @@ export default function HomeScreen() {
             {isSkillsData.map((skillsData, skillsIndex) => (
               <button
                 key={skillsIndex}
-                className="skillsFilter"
-                onClick={toggleFilter}
+                className={`skillsFilter ${
+                  isSkillActive === skillsIndex ? "activeSkills" : ""
+                }`}
+                onClick={() => toggleFilter(skillsData, skillsIndex)}
               >
                 <span className="filterText">{skillsData.skillName}</span>
               </button>
             ))}
           </div>
-          <div className="filterDetailsContainer"></div>
+          <div className="filterDetailsContainer">
+            {selectedSkill && selectedSkill.skillsDetails && (
+              <div className="filterDetails">
+                {Object.values(selectedSkill.skillsDetails).map(
+                  (techStackName, stackIndex) => (
+                    <div key={stackIndex} className="filterMainContainer">
+                      {techStackName.imageUrl && techStackName.techStack ? (
+                        <div className="filterContainer">
+                          <img
+                            src={techStackName.imageUrl}
+                            alt="techStackImage"
+                            className="techStackLogo"
+                          />
+                          <span className="techStackText">
+                            {techStackName.techStack}
+                          </span>
+                        </div>
+                      ) : (
+                        <div className="filterContainer">
+                          <span className="techStackText">{techStackName}</span>
+                        </div>
+                      )}
+                    </div>
+                  )
+                )}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </>
