@@ -16,6 +16,14 @@
     src: url(https://fonts.gstatic.com/s/abel/v18/MwQ5bhbm2POE2V9BPQ.woff2) format('woff2');
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFE4E4; 
+    width: 100vw; 
+}
+
 .header {
     position: fixed;
     top: 0;
@@ -24,6 +32,7 @@
     z-index: 1000;
     display: flex; 
     justify-content: center;
+    background-color: white;
 }
 
 .webHeaderContainer {
@@ -31,6 +40,7 @@
     width: 85%; 
     display: flex;
     flex-direction: row;
+    background-color: white;
 }
 
 .homeMyNameContainer {
@@ -39,6 +49,7 @@
     display: flex;
     align-items: flex-end;
     cursor: pointer; 
+    background-color: white;
 }
 
 .homeNameJane, .homeNameBlanca {
@@ -65,6 +76,7 @@
     justify-content: flex-end;
     align-items: flex-end;
     flex-direction: row;
+    background-color: white;
 }
 
 .contactNavContainer,

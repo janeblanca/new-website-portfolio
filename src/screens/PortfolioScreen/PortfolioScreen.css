@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Alata&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+@font-face {
+    font-family: 'Alata';
+    src: url(https://fonts.gstatic.com/s/alata/v10/PbytFmztEwbIoce9zqY.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'Work Sans';
+    src: url(https://fonts.gstatic.com/s/worksans/v19/QGYsz_wNahGAdqQ43Rh_fKDp.woff2) format('woff2');
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+}
+
+.portfolioMainScreenContainer {
+    height: 90vh;
+    width: 100vw;
+    max-width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+.portfolioContainer {
+    height: 100%; 
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+}
+
+.pageTitleContainer {
+    height: 7%;
+    width: 100%;
+    background-color: yellow;
+}
+
+.titleText {
+    font-family: 'Work Sans'; 
+    font-size: 40px; 
+    font-weight: 500;
+    color: #0e0e0e;
+}
+
+.projectsContainer {
+    height: 93%;
+    width: 100%; 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: wheat;
+}
