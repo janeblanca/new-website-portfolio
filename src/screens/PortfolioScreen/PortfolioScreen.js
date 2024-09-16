@@ -8,6 +8,7 @@ import { firestore } from "../../firebase/firebase";
 import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
 import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import ArticleIcon from "@mui/icons-material/Article";
 
 export default function PortfolioScreen() {
   const [projectsData, setProjectsData] = useState([]);
@@ -60,7 +61,7 @@ export default function PortfolioScreen() {
         <div className="projectsContainer">
           <div className="previousContainer" onClick={handlePreviousButton}>
             <ArrowBackIosNewRoundedIcon
-              style={{ fontSize: 100 }}
+              style={{ fontSize: 80 }}
               className="arrowIcons"
             />
           </div>
@@ -74,15 +75,48 @@ export default function PortfolioScreen() {
                 />
               </div>
               <div className="projectInfoContainer">
-                <div className="projectNameContainer">
-                  <img
-                    src={projectsData[currentIndex].projectLogo}
-                    alt="projectLogo"
-                    className="projectLogo"
-                  />
-                </div>
+                {!projectsData[currentIndex].projectLogo ? (
+                  <div className="projectNameContainer">
+                    <span className="projectNameTitle">
+                      {projectsData[currentIndex].projectName}
+                    </span>
+                  </div>
+                ) : (
+                  <div className="projectNameContainer">
+                    <img
+                      src={projectsData[currentIndex].projectLogo}
+                      alt="projectLogo"
+                      className="projectLogo"
+                    />
+                  </div>
+                )}
                 <div className="linkContainer">
-                  <GitHubIcon style={{ cursor: "pointer" }} />
+                  <a
+                    href={projectsData[currentIndex].githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: "inherit", textDecoration: "none" }}
+                    className="logoLink"
+                  >
+                    <GitHubIcon style={{ cursor: "pointer" }} />
+                  </a>
+                  {!projectsData[currentIndex].docuLink ? (
+                    console.log("No projects data")
+                  ) : (
+                    <a
+                      href={projectsData[currentIndex].docuLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        color: "inherit",
+                        textDecoration: "none",
+                        marginLeft: "2%",
+                      }}
+                      className="logoLink"
+                    >
+                      <ArticleIcon style={{ cursor: "pointer" }} />
+                    </a>
+                  )}
                 </div>
                 <div className="projectDescContainer">
                   <p className="projectText">
@@ -127,18 +161,20 @@ export default function PortfolioScreen() {
                 )}
                 <div className="projectRoleContainer">
                   <span className="roleText">Role:</span>
-                  {projectsData[currentIndex].projectRole.map((role, roleIndex) => (
-                    <div key={roleIndex} className="roleContainer">
-                      <span className="projectText">{role}</span>
-                    </div>
-                  ))}
+                  {projectsData[currentIndex].projectRole.map(
+                    (role, roleIndex) => (
+                      <div key={roleIndex} className="roleContainer">
+                        <span className="projectText">{role}</span>
+                      </div>
+                    )
+                  )}
                 </div>
               </div>
             </div>
           )}
           <div className="nextContainer" onClick={handleNextButton}>
             <ArrowForwardIosRoundedIcon
-              style={{ fontSize: 100 }}
+              style={{ fontSize: 80 }}
               className="arrowIcons"
             />
           </div>

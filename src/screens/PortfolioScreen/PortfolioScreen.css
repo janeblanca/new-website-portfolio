@@ -30,6 +30,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    /* background-color: #FFE4E4; */
 }
 
 .portfolioContainer {
@@ -48,7 +49,7 @@ body {
 
 .titleText {
     font-family: 'Work Sans'; 
-    font-size: 40px; 
+    font-size: 2.5rem; 
     font-weight: 500;
     color: #0e0e0e;
 }
@@ -81,11 +82,12 @@ body {
 .arrowIcons {
     color: #FFE4E4;
     cursor: pointer; 
-    transition: transform 0.5s ease, color 0.5s ease;
+    font-size: 100vw;
+    transition: all 0.3s ease;
 }
 
 .arrowIcons:hover {
-    transform: translateX(10px) scale(1.2);
+    transform: scale(1.2); 
 }
 
 .picAndVidContainer {
@@ -101,7 +103,6 @@ body {
     width: 50%; 
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
 }
 
@@ -112,26 +113,31 @@ body {
 }
 
 .projectNameContainer {
-    height: 10%; 
+    height: 15%; 
     width: 100%;
     display: flex;
     justify-content: center;
+    /* background-color: yellowgreen; */
 }
 
 .linkContainer {
-    height: 8%; 
+    max-height: 10%; 
+    height: 5%; 
     width: 100%; 
     display: flex;
     align-items: center;
     justify-content: center;
+    /* background-color: yellow; */
 }
 
 .projectDescContainer {
     height: 30%; 
+    max-height: 40%;
     width: 100%; 
     display: flex;
     text-align: justify;
     align-items: center;
+    /* background-color: wheat; */
 }
 
 .techStackManyContainer, 
@@ -145,11 +151,13 @@ body {
 .techStackManyContainer {
     height: 20%; 
     flex-direction: column;
+    /* background-color: pink; */
 }
 
 .techStackContainer {
     height: 10%; 
     flex-direction: row;
+    /* background-color: violet; */
 }
 
 .projectRoleContainer {
@@ -157,11 +165,12 @@ body {
     width: 100%; 
     display: flex;
     align-items: center;
+    /* background-color: tomato; */
 }
 
 .projectText {
-    font-family: 'Work Sans';
-    font-size: 15px; 
+    font-family: 'Work Sans'; 
+    font-size: 1vw;
     font-weight: 400;
     color: #0e0e0e; 
 }
@@ -195,15 +204,16 @@ body {
 
 .techStackText {
     font-family: 'Alata';
-    font-size: 10px; 
+    font-size: 0.7vw;
     font-weight: 500;
     color: #0e0e0e;
     text-align: center;
 }
 
+
 .roleText {
     font-family: 'Work Sans';
-    font-size: 15px; 
+    font-size: 1vw; 
     font-weight: 900px;
     color: #0e0e0e;
 }
@@ -214,4 +224,93 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.projectNameTitle {
+    font-family: 'Work Sans';
+    font-size: 1.5vw; 
+    font-weight: 500;
+    text-align: center;
+}
+
+.logoLink {
+    font-size: 1.5vw;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.logoLink:hover {
+    transform: scale(1.1); 
+}
+
+.projectLogo {
+    object-fit: contain;
+    max-width: 80%;
+    max-height: 80%; 
+    width: auto; 
+    height: auto; 
+}
+
+@media (max-width: 800px) {
+    .projectDetailsContainer {
+        flex-direction: column; 
+        align-items: center; 
+        /* background-color: yellowgreen; */
+    }
+
+    .picAndVidContainer,
+    .projectInfoContainer {
+        width: 100%; 
+    }
+
+    .picAndVidContainer {
+        margin-bottom: 20px;
+        height: 50%;
+        /* background-color: pink; */
+    }
+
+    .projectInfoContainer {
+        height: 45%;
+    }
+
+    .projectNameContainer {
+        height: 20%;
+        /* background-color: yellow; */
+    }
+
+    .linkContainer {
+        height: 15%;
+    }
+
+    .projectDescContainer {
+        height: 30%;
+    }
+
+    .techStackManyContainer {
+        height: 15%; 
+    }
+
+    .techStackContainer {
+        height: 15%; 
+    }
+
+    .projectRoleContainer {
+        height: 10%;
+    }
+
+    .projectText {
+        font-size: 8px;
+    }
+
+    .projectNameTitle {
+        font-size: 12px;
+    }
+
+    .techStackText {
+        font-size: 5px;
+    }
+
+    .roleText {
+        font-size: 8px;
+    }
 }
