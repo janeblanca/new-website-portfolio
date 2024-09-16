@@ -24,12 +24,18 @@ body {
 }
 
 .experienceMainContainer {
-    height: 100vh;
+    height: 92vh;
     width: 100%;
-    max-width: 100vw;
+    max-width: 100%;
     display: flex;
-    flex-direction: row;
     justify-content: center;
+}
+
+.experienceContainer {
+    height: 100%; 
+    width: 85%;
+    display: flex;
+    flex-direction: column;
 }
 
 .titleContainer {
@@ -37,7 +43,6 @@ body {
     width: 100%; 
     display: flex;
     align-items: center;
-    background-color: pink;
 }
 
 .titleText {
@@ -47,9 +52,190 @@ body {
     color: #0e0e0e;
 }
 
-.experienceContainer {
-    height: 88%; 
+.educAndWorkExpContainer {
+    height: 100%; 
     width: 100%;
+    display: flex; 
+    flex-direction: row;
+}
+
+.educationContainer, 
+.workExpContainer {
+    height: 100%; 
+    width: 50%; 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+.educationDetailsContainer,
+.workExpDetailsContainer {
+    width: 95%; 
+    height: 95%; 
+    display: flex;
+    flex-direction: column;
+}
+
+.educTitleContainer,
+.workExpTitleContainer {
+    height: 8%; 
+    width: 100%; 
+}
+
+.expTitleText {
+    font-family: 'Work Sans';
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 10%;
+}
+
+.infoContainer {
+    height: 92%; 
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+}
+
+.timelineContainer {
+    height: 33%; 
+    width: 100%; 
     display: flex;
     flex-direction: row;
+}
+
+.timeDrawContainer {
+    height: 100%; 
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timelineDetailedInfoContainer {
+    height: 100%;
+    width: 90%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.timelineCircle {
+    height: 12%;
+    width: 35%;
+    border-radius: 50%;
+    background-color: #935A5A;
+}
+
+.timelineLine {
+    height: 91%; 
+    width: 5%;
+    background-color: #935A5A;
+}
+
+.timelineDetails {
+    height: 90%;
+    width: 100%;
+    border-radius: 0.75rem;
+    border: 3px solid #935A5A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+}
+
+.dateContainer {
+    height: 20%; 
+    width: 100%; 
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.calendarContainer {
+    height: 100%;
+    width: 7%; 
+}
+
+.dateTextContainer {
+    height: 100%;
+    width: 95%;
+}
+
+.dateText {
+    font-family: 'Alata';
+    font-size: 15px;
+    font-weight: 500; 
+}
+
+.timeline {
+    width: 95%; 
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.positionContainer {
+    height: 70%; 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.position {
+    height: 20%; 
+    width: 100%; 
+}
+
+.workplaceContainer {
+    height: 15%; 
+    width: 100%;
+}
+
+.positionText {
+    font-family: 'Work Sans';
+    font-size: 17px; 
+    font-weight: 500;
+    color: #0e0e0e;
+}
+
+.workplaceText {
+    font-family: 'Work Sans';
+    font-size: 15px; 
+    font-weight: 400; 
+    color: #0e0e0e;
+}
+
+.workDescriptionContainer {
+    height: 65%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.workDescText {
+    font-family: 'Work Sans';
+    font-size: 13px; 
+    font-weight: 400; 
+    color: #0e0e0e;
+    text-align: justify;
+}
+
+.calendarIcon {
+    color: black
+}
+
+.timelineDetails:hover {
+    background-color: hsl(0, 24%, 46%);
+    opacity: 0.80;
+    transform: translateX(10px);
+}
+
+.timelineDetails:hover .workDescText, 
+.timelineDetails:hover .dateText, 
+.timelineDetails:hover .positionText, 
+.timelineDetails:hover .workplaceText,
+.timelineDetails:hover .calendarIcon {
+    color: #FFF;
 }
